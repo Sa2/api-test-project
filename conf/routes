@@ -4,7 +4,11 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
+GET     /                           controllers.ApiController.index
+GET     /internal                   controllers.InternalApiController.index
+GET     /internal/get               controllers.InternalApiController.getWithParameter
+GET     /external                   controllers.ExternalApiController.index
+GET     /external/get               controllers.ExternalApiController.getWithParameter
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
