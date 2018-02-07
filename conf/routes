@@ -6,9 +6,11 @@
 # An example controller showing a sample home page
 GET     /                           controllers.ApiController.index
 GET     /internal                   controllers.InternalApiController.index
-GET     /internal/get               controllers.InternalApiController.getWithParameter
+GET     /internal/get               controllers.InternalApiController.getWithParameter(param: Option[String])
+POST    /internal/post              controllers.InternalApiController.postWithParameter(param: Option[String])
 GET     /external                   controllers.ExternalApiController.index
-GET     /external/get               controllers.ExternalApiController.getWithParameter
+GET     /external/get               controllers.ExternalApiController.getWithParameter(param: Option[String])
+POST    /internal/post              controllers.InternalApiController.postWithParameter(param: Option[String])
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

@@ -24,5 +24,11 @@ class ExternalApiController @Inject()(cc: ControllerComponents) extends Abstract
     Ok(Json.obj("result" -> "ok", "apiType" -> "external"))
   }
 
-  def getWithParameter() = TODO
+  def getWithParameter(param: Option[String]) =  Action { implicit request: Request[AnyContent] =>
+    Ok(Json.obj("result" -> "ok", "param" -> param.getOrElse("no param").toString))
+  }
+
+  def postWithParameter(param: Option[String]) = Action { implicit request: Request[AnyContent] =>
+    Ok(Json.obj("result" -> "ok", "param" -> param.getOrElse("no param").toString))
+  }
 }
